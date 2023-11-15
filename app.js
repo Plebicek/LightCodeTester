@@ -7,9 +7,15 @@ const PORT = process.env.PORT || 5000
 const routesTester = require("./routes/tester")
 const routesIndex = require("./routes/index")
 
-const db = require("./config/db.sequlize")
+const database = require("./config/db.sequlize")
+database.sequelize.sync({force: false})
+.then(()=> {
+  console.log("Db has sync")
+})
+.catch((err)=> {
+  console.err("Db sync error occured" + err)
+})
 
-db()
 
 
 const app = express()

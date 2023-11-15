@@ -1,12 +1,10 @@
-const UserModel = require("../models/users.model")
-const { models } = require("./../config/db.utils")
+
+const db = require("./../config/db.sequlize")
+console.log(db.User)
+const User = db.User
 
 
-async function index(req,res,next) {
-    const allUsers = await UserModel.findAll()
-    res.status(200).json({allUsers})
-}
-
-module.exports = {
-    index
+exports.index = async (req,res) => {
+    const users = await User.findAll()
+    res.json({users})
 }

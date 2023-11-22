@@ -52,8 +52,8 @@ app.use(session({
 /* STATIC */
 app.use("/static", express.static(path.join(__dirname, "public")))
 /* ROUTES */
-app.use("/user/",  userRoutes)
-app.use("/", indexRoutes)
+app.use("/user/", userRoutes)
+app.use("/", isUserLogged, indexRoutes)
 
 /* NotPageFound */
 app.use((req,res) => {

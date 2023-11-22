@@ -9,12 +9,12 @@ exports.login =  function (req,res) {
 exports.logout = function(req,res,next) {
     if(req.session.isAuth) {
         req.session.isAuth = null
-        req.session.save(()=> {
+        req.session.save((err)=> {
             if (err) next() 
         })
-        res.redirect("/")
+        res.redirect("/user/login")
     } else {
-        res.redirect("/")
+        res.redirect("/user/login")
     }
 }
 

@@ -1,3 +1,4 @@
 module.exports.index = function(req,res) {
-    res.render("index")
+    console.log(req.session.isAuth)
+    res.render("index", {user: req.session.isAuth})
 }

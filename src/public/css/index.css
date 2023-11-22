@@ -50,10 +50,69 @@ a {
 }
 
 .main-content {
-    width: 90vw;
+    width: 90%;
     margin: 0 auto;
     margin-top: 50px;
     height: 88vh;
     background-color: white;
+    display: flex;
     box-shadow: 0px 5px 16.399999618530273px 4px #00000040;
 }
+
+.task-content {
+    width: 85%;
+    background-color: #D9D9D9;
+    height: 90%;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.task-todo-content {
+    width: 70%;
+    background-color: #CECCCC;
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    
+}
+
+.todo-headline {
+    margin-left: 75px;
+}
+
+.todo-tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 10px;
+    align-items: center;
+    padding: 10px;
+}
+
+.task-time-end {
+    font-size: 0.8rem;
+   
+}
+
+.task-near-end {
+    background-color: #FF6B00;
+}
+
+.task-soon-end {
+    background-color: #FAFF00;
+}
+
+
+.task-begin {
+    background-color: #0FFE0B;
+}
+
+.task-closed {
+    background-color: #FF1607;
+}
+

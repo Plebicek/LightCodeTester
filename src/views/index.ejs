@@ -25,9 +25,54 @@
     </header>
 
     <main class="main-content">
-        <% if (user) { %>
-            <p class="header-welcome"><%= user.user %></p>
-          <% } %>
+        <div class="task-content">
+            <!-- TODO -->
+            <div class="task-todo-content">
+                <p class="todo-headline">
+                    Úkoly k dodělání</p>
+                    <ul class="todo-tasks">
+                        <div class="task not-done-task task-near-end">
+                            <!-- úkol který se za chvíli ukončí - (orandžová barva) -->
+                            <p class="task-name">Testování implentace tříd v jave</p>
+                            <p class="task-time-end">zbývá 15 dní</p>
+                        </div>
+
+                        <div class="task not-done-task task-soon-end">
+                            <!-- úkol který se za chvíli ukončí - (orandžová barva) -->
+                            <p class="task-name">Testování implentace tříd v jave</p>
+                            <p class="task-time-end">zbývá 15 dní</p>
+                        </div>
+
+                        <div class="task not-done-task task-begin">
+                            <!-- úkol který se za chvíli ukončí - (orandžová barva) -->
+                            <p class="task-name">Testování implentace tříd v jave</p>
+                            <p class="task-time-end">zbývá 15 dní</p>
+                        </div>
+
+                        <div class="task not-done-task task-begin">
+                            <!-- úkol který se za chvíli ukončí - (orandžová barva) -->
+                            <p class="task-name">Testování implentace tříd v jave</p>
+                            <p class="task-time-end">zbývá 15 dní</p>
+                        </div>
+
+                        <div class="task not-done-task task-begin">
+                            <!-- úkol který se za chvíli ukončí - (orandžová barva) -->
+                            <p class="task-name">Testování implentace tříd v jave</p>
+                            <p class="task-time-end">zbývá 15 dní</p>
+                        </div>
+
+                        <div class="task not-done-task task-closed">
+                            <!-- úkol který se za chvíli ukončí - (orandžová barva) -->
+                            <p class="task-name">Testování implentace tříd v jave</p>
+                            <p class="task-time-end">zbývá 15 dní</p>
+                        </div>
+                    </ul>
+            </div>
+            <!-- DONE -->
+            <div class="task-done-content">
+
+            </div>
+        </div>
     </main>
 </body>
 </html>

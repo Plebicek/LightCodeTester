@@ -18,14 +18,12 @@ require("dotenv").config()
 const PORT = process.env.PORT || 5000
 
 /* DATABASE INIT */
-const database = require("./config/db.sequlize")
 
-database.sequelize.sync({force: false})
-.then(()=> {console.log("Db has sync")})
-.catch((err)=> {console.error("Db sync error occured" + err)})
+const db = require("./config/db.sequlize")
 
 /* SESSION DATABASE */
-const sequelizeSessionStore = new SessioStore({db:database.sequelize})
+const sequelizeSessionStore = new SessioStore({db:db})
+
 
 /* EXPRESS INIT */
 const app = express()

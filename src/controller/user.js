@@ -1,5 +1,5 @@
 const db = require("./../config/db.sequlize")
-const User = db.User
+
 
 
 exports.login =  function (req,res) {

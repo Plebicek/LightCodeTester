@@ -1,8 +1,12 @@
 
 
-module.exports = (sequlize, Sequelize) => {
+
+module.exports = (sequlize) => {
+    const {Sequelize} = require("sequelize")
     const DataTypes = Sequelize.DataTypes
-    
+    const {Task}  = sequlize.models
+    console.log(sequlize.models)
+
     const User = sequlize.define("User", {
         userId: {
             type : DataTypes.INTEGER,
@@ -19,6 +23,13 @@ module.exports = (sequlize, Sequelize) => {
         }
     })
 
-    return User
+    try{
+        User.belongsToMany(Task, {through: "UsersTasks", foreignKey: "userId"})
+        Task.belongsToMany(User, {through: "UsersTasks", foreignKey: "taskId"})
+    } catch( err) {
+        console.log("referencing in modules " + err)
+    }
+
+    User.sync({alter: true, force: false})
 
 }
